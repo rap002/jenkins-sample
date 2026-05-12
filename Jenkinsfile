@@ -38,14 +38,14 @@ pipeline {
             steps {
                 sh "docker rm -f ${APP_NAME} || true"
                 sh "docker run -d --name ${APP_NAME} -p 3001:3000 ${APP_NAME}:${BUILD_NUMBER}"
-                sh "sleep 3 && curl -f http://localhost:3001/ || (docker logs ${APP_NAME} && exit 1)"
+                sh "sleep 3 && curl -f http://host.docker.internal:3001/ || (docker logs ${APP_NAME} && exit 1)"
             }
         }
 
     }
 
     post {
-        success { echo "App running at http://host.docker.internal:3001/" }
+        success { echo "App running at http://localhost:3001/" }
         failure { echo "Build ${BUILD_NUMBER} failed." }
     }
 }
