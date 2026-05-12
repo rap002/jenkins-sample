@@ -1,0 +1,32 @@
+{
+  "name": "jenkins",
+  "version": "1.0.0",
+  "description": "testing pipe line",
+  "keywords": [
+    "nothing"
+  ],
+  "homepage": "https://github.com/rap002/jenkins-sample#readme",
+  "bugs": {
+    "url": "https://github.com/rap002/jenkins-sample/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rap002/jenkins-sample.git"
+  },
+  "license": "ISC",
+  "author": "me",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "jest --ci --reporters=default --reporters=jest-junit"
+  },
+  "dependencies": {
+    "express": "4.18.2"
+  },
+  "devDependencies": {
+    "jest": "29.7.0",
+    "jest-junit": "16.0.0",
+    "supertest": "6.3.4"
+  }
+}
