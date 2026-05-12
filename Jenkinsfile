@@ -45,7 +45,7 @@ pipeline {
     }
 
     post {
-        success { echo "App running at http://localhost:3001/" }
+        success { echo "App running at http://host.docker.internal:3001/" }
         failure { echo "Build ${BUILD_NUMBER} failed." }
     }
 }
