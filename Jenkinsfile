@@ -7,7 +7,7 @@ pipeline {
 
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-creds')
-        IMAGE_NAME = "yourname/hello-jenkins"
+        IMAGE_NAME = "foofa/hello-jenkins"
         IMAGE_TAG  = "${BUILD_NUMBER}"
         JEST_JUNIT_OUTPUT_DIR  = 'test-results'
         JEST_JUNIT_OUTPUT_NAME = 'junit.xml'
