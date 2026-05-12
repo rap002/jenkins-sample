@@ -48,7 +48,7 @@ pipeline {
             steps {
                 sh "docker rm -f smoke-test || true"
                 sh "docker run -d --name smoke-test -p 3002:3000 ${IMAGE_NAME}:${IMAGE_TAG}"
-                sh "sleep 5 && curl -f http://localhost:3002/ || (docker logs smoke-test && exit 1)"
+                sh "sleep 5 && curl -f http://host.docker.internal:3002/ || (docker logs smoke-test && exit 1)"
                 sh "docker rm -f smoke-test"
             }
         }
