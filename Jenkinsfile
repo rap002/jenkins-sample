@@ -19,7 +19,7 @@ pipeline {
     stages {
 
         stage('Checkout') {
-            steps { checkout scm }
+            steps { git branch: 'main', url: 'https://github.com/rap002/jenkins-sample' }
         }
 
         stage('Install & Test') {
