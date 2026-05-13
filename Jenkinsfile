@@ -19,10 +19,7 @@ pipeline {
     stages {
 
         stage('Checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/rap002/jenkins-sample'
-                echo "Building ${GIT_BRANCH} @ ${GIT_COMMIT[0..7]}"
-            }
+            steps { checkout scm }
         }
 
         stage('Install & Test') {
